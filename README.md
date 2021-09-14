@@ -2,11 +2,11 @@
 
 This repository contains all the data of ZARD's singles and albums in the JSON format which are collected from [Wikipedia](https://ja.wikipedia.org/wiki/ZARD).
 
-* You can check this website for exploration.
+* You can check this [website](https://brucejian43.github.io/ZARD-songs/) for exploration.
 
 ![image](./imgs/img1.png)
 
-* You can also use this [website](https://BruceJian43.github.io/ZARD-songs) to find which single or album containing the song you want to search like the image below.
+* You can also use this website to find which single or album containing the song you want to search like the image below.
 
 ![image](./imgs/img2.png)
 ![image](./imgs/img3.png)
