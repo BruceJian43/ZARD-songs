@@ -9,15 +9,15 @@
 }
 
 .navigation-bar li {
-    float: left;
+  float: left;
 }
 
 .navigation-bar a {
-    display: block;
-    color: black;
-    text-align: left;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: black;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 .navigation-bar a:hover{
@@ -26,13 +26,13 @@
 
 .column {
   float: left;
-  width: 25%;
-  padding: 15px;
+  width: 10%;
+  padding: 10px;
 }
 
 .column-mid {
   float: left;
-  width: 50%;
+  width: 80%;
   padding: 15px;
 }
 
@@ -160,17 +160,17 @@ input[type=submit]:hover {
 }
 
 th {
-    display: table-cell;
-    vertical-align: inherit;
-    font-weight: bold;
-    text-align: -internal-center;
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: -internal-center;
 }
 
 .search-result-table td, .search-result-table th {
-    padding: .75rem;
-    vertical-align: top;
-    border: none;
-    border-top: 1px solid #dee2e6;
+  padding: .75rem;
+  vertical-align: top;
+  border: none;
+  border-top: 1px solid #dee2e6;
 }
 
 ul {

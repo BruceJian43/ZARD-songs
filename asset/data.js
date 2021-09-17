@@ -1,6 +1,7 @@
 var songs = [
     "Boy",
     "Brand New Love",
+    "CAN'T TAKE MY EYES OFF OF YOU（君の瞳に恋してる）",
     "Change my mind",
     "DAN DAN 心魅かれてく",
     "Dangerous Tonight",
@@ -94,7 +95,6 @@ var songs = [
     "君とのふれあい",
     "君と今日の事を一生忘れない",
     "君に逢いたくなったら…",
-    "君の瞳に恋してる",
     "君へのブルース",
     "夏を待つセイル（帆）のように",
     "天使のような笑顔で",
@@ -139,6 +139,7 @@ var songs = [
     "私だけ見つめて",
     "突然",
     "窓の外はモノクローム",
+    "約束のない恋",
     "素直に言えなくて",
     "翼を広げて",
     "見つめていたいね",
@@ -372,9 +373,9 @@ var single = {
             "世界はきっと未来の中（オリジナルカラオケ）"
         ]
     },
-    "君の瞳に恋してる": {
+    "CAN'T TAKE MY EYES OFF OF YOU（君の瞳に恋してる）": {
         "CD": [
-            "君の瞳に恋してる"
+            "CAN'T TAKE MY EYES OFF OF YOU（君の瞳に恋してる）"
         ]
     },
     "痛いくらい君があふれているよ": {
@@ -619,6 +620,10 @@ var album = {
                 "息もできない",
                 "風が通り抜ける街へ",
                 "フォトグラフ"
+            ],
+            "初回特典CD": [
+                "CAN'T TAKE MY EYES OFF OF YOU（君の瞳に恋してる）",
+                "CAN'T TAKE MY EYES OFF OF YOU（君の瞳に恋してる） 〜Readymade Wizard Mix Short Cuts〜"
             ]
         },
         "時間の翼": {
