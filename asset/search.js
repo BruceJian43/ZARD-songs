@@ -23,8 +23,8 @@ function editDistance(str1, str2) {
 function getScores(s, data) {
     let res = [];
     for (let d of data) {
-        let dis = editDistance(s.toUpperCase(), d.toUpperCase());
-        let score = (s.length + d.length - dis) >> 1;
+        const dis = editDistance(s.toUpperCase(), d.toUpperCase());
+        const score = (s.length + d.length - dis) >> 1;
         res.push([d, score]);
     }
     res.sort(function (a, b) {
@@ -35,24 +35,24 @@ function getScores(s, data) {
 
 
 function setUpSearcher(inp, data) {
-    var highlightedIndex;
+    let highlightedIndex;
     setUpInputListener(inp, data);
     setUpKeydownListener(inp);
 
     function createItemsContainer() {
-        let container = document.createElement('DIV');
+        const container = document.createElement('DIV');
         container.setAttribute('class', setUpSearcher.Options['itemsContainerClass']);
         return container;
     }
 
     function removeItemsContainer(elem) {
-        let container = document.querySelector('.' + setUpSearcher.Options['itemsContainerClass']);
+        const container = document.querySelector('.' + setUpSearcher.Options['itemsContainerClass']);
         if (container != undefined && elem != container && elem != inp)
             container.parentNode.removeChild(container);
     }
 
     function createItem(inp, name) {
-        let item = document.createElement("DIV");
+        const item = document.createElement("DIV");
         item.innerHTML = name;
         item.addEventListener('click', function (e) {
             inp.value = this.textContent;
@@ -62,16 +62,16 @@ function setUpSearcher(inp, data) {
     }
     function setUpInputListener(inp, data) {
         inp.addEventListener('input', function (e) {
-            let currentInput = this.value;
+            const currentInput = this.value;
             removeItemsContainer();
             if (!currentInput) { return false };
             highlightedIndex = -1;
-            let itemContainer = createItemsContainer();
+            const itemContainer = createItemsContainer();
             this.parentNode.appendChild(itemContainer);
-            let scores = getScores(currentInput, data);
+            const scores = getScores(currentInput, data);
             for (let i = 0; i < Math.min(setUpSearcher.Options['numOfSuggestions'], data.length); i++) {
                 if (scores[i][1] > setUpSearcher.Options['scoreThreshold']) {
-                    let item = createItem(inp, scores[i][0]);
+                    const item = createItem(inp, scores[i][0]);
                     itemContainer.appendChild(item);
                 }
             }
@@ -80,9 +80,9 @@ function setUpSearcher(inp, data) {
 
     function setUpKeydownListener(inp) {
         inp.addEventListener('keydown', function (e) {
-            let itemsContainer = document.querySelector('.' + setUpSearcher.Options['itemsContainerClass']);
+            const itemsContainer = document.querySelector('.' + setUpSearcher.Options['itemsContainerClass']);
             if (itemsContainer != undefined) {
-                let items = itemsContainer.querySelectorAll('div');
+                const items = itemsContainer.querySelectorAll('div');
                 if (e.keyCode == 40) {
                     highlightedIndex++;
                     addActive(items);
@@ -129,13 +129,13 @@ setUpSearcher.Options = {
     itemActiveClass: 'autocomplete-active'
 }
 
-var submitBox = document.querySelector('#input-box');
-var submitBtn = document.querySelector('.autocomplete-submit');
+const submitBox = document.querySelector('#input-box');
+const submitBtn = document.querySelector('.autocomplete-submit');
 
 function findItemsInTheCollection(songTypes, targetSong) {
     let items = [];
     for (const [songType, Collection] of Object.entries(songTypes)) {
-        for (let song of Collection) {
+        for (const song of Collection) {
             if (song.includes(targetSong)) {
                 if (targetSong === 'Boy') {
                     if (song.includes("It's a Boy") || song.includes('Lonely Soldier Boy'))
@@ -152,11 +152,11 @@ function findItemsInTheCollection(songTypes, targetSong) {
 }
 
 function createSearchResultTable(titles) {
-    let tr = document.createElement('TR');
-    let thead = document.createElement('THEAD');
-    let table = document.createElement('TABLE');
-    for (title of titles) {
-        let th = document.createElement('TH');
+    const tr = document.createElement('TR');
+    const thead = document.createElement('THEAD');
+    const table = document.createElement('TABLE');
+    for (const title of titles) {
+        const th = document.createElement('TH');
         th.innerHTML = title;
         th.setAttribute('scope', 'col');
         tr.appendChild(th);
@@ -169,9 +169,9 @@ function createSearchResultTable(titles) {
 }
 
 function createSearchResultItem(item, title) {
-    let tr = document.createElement("TR");
-    for (let t of title.concat(item)) {
-        let th = document.createElement('TD');
+    const tr = document.createElement("TR");
+    for (const t of title.concat(item)) {
+        const th = document.createElement('TD');
         th.innerHTML = t;
         tr.appendChild(th);
     }
@@ -179,8 +179,8 @@ function createSearchResultItem(item, title) {
 }
 
 function displaySearchResultItems(items, title, theadClass) {
-    let thead = document.querySelector('.' + theadClass);
-    for (let item of items) {
+    const thead = document.querySelector('.' + theadClass);
+    for (const item of items) {
         thead.appendChild(
             createSearchResultItem(item, title)
         );
@@ -188,7 +188,7 @@ function displaySearchResultItems(items, title, theadClass) {
 }
 
 function removeSearchResultTable() {
-    let tables = document.querySelectorAll('.search-result-table');
+    const tables = document.querySelectorAll('.search-result-table');
     if (tables != undefined) {
         for (let i = 0; i < tables.length; i++) {
             tables[i].parentNode.removeChild(tables[i]);
@@ -198,9 +198,8 @@ function removeSearchResultTable() {
 
 submitBtn.addEventListener('click', function (e) {
     if (submitBox.value.length > 0) {
-        let items;
-        let scores = getScores(submitBox.value, songs);
-        let targetSong = scores[0][0];
+        const scores = getScores(submitBox.value, songs);
+        const targetSong = scores[0][0];
         submitBox.value = targetSong;
         removeSearchResultTable();
 
@@ -209,7 +208,7 @@ submitBtn.addEventListener('click', function (e) {
         );
 
         for (const [singleName, songTypes] of Object.entries(single)) {
-            items = findItemsInTheCollection(songTypes, targetSong);
+            const items = findItemsInTheCollection(songTypes, targetSong);
             displaySearchResultItems(items, [singleName], 'search-result-single');
         }
 
@@ -218,7 +217,7 @@ submitBtn.addEventListener('click', function (e) {
         );
         for (const [albumType, albumNames] of Object.entries(album)) {
             for (const [albumName, songTypes] of Object.entries(albumNames)) {
-                items = findItemsInTheCollection(songTypes, targetSong);
+                const items = findItemsInTheCollection(songTypes, targetSong);
                 displaySearchResultItems(items, [albumName], 'search-result-album');
             }
         }

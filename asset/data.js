@@ -1,4 +1,4 @@
-var songs = [
+const songs = [
     "Boy",
     "Brand New Love",
     "CAN'T TAKE MY EYES OFF OF YOU（君の瞳に恋してる）",
@@ -154,7 +154,7 @@ var songs = [
     "黄昏にMy Lonely Heart"
 ];
 
-var single = {
+const single = {
     "Good-bye My Loneliness": {
         "CD": [
             "Good-bye My Loneliness",
@@ -509,7 +509,7 @@ var single = {
     }
 };
 
-var album = {
+const album = {
     "original": {
         "Good-bye My Loneliness": {
             "CD": [
